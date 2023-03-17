@@ -9,9 +9,6 @@ private:
     int mana;
 
 public:
-    Wizard();
-    Wizard(string newName, int newLife, int newMana);
-    void castASpell() const;
-    void takeManaPotion();
     void display() const;
+    string getWeapon() const;
 };

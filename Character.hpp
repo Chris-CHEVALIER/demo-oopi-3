@@ -9,9 +9,7 @@ protected:
     int life;
 
 public:
-    Character();
-    Character(string newName, int newLife);
-    void rename(string newName);
-    void takeLifePotion();
-    void display() const;
+    virtual void display() const;
+    virtual string getWeapon() const = 0;
+    virtual ~Character();
 };

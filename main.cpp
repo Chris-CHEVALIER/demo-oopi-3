@@ -1,22 +1,38 @@
 
 #include "Wizard.cpp"
+#include "Character.cpp"
 #include "Warrior.cpp"
+
+#include <vector>
+
+void introduce(Character &c)
+{
+    c.display();
+}
 
 int main()
 {
-    Character alexandre("Alexandre", 100);
-    Wizard sirine("Sirine", 100, 100);
-    Warrior saber("Saber", 10000, 10000);
+    /* Character geralt;
+    Warrior aragorn;
 
-    alexandre.display();
-    sirine.display();
-    saber.display();
+    introduce(geralt);
+    introduce(aragorn); */
 
-    sirine.takeManaPotion();
-    saber.takeLifePotion();
+    vector<Character *> characters;
 
-    sirine.display();
-    saber.display();
+    characters.push_back(new Wizard);
+    characters.push_back(new Warrior);
+    characters.push_back(new Warrior);
+
+    cout << characters[0]->getWeapon() << endl;
+    cout << characters[2]->getWeapon() << endl;
+
+    for (int i = 0; i < characters.size(); i++)
+    {
+        delete characters[i];
+        characters[i] = 0;
+    }    
+
 
     return 0;
 }
